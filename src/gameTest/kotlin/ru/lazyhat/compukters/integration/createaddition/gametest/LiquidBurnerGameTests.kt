@@ -85,6 +85,10 @@ object LiquidBurnerGameTests {
             check(LiquidBurner.first() == burner)
             val initial = burner.status()
             check(initial.fuelAmount == 1 && initial.fuelCapacity > 0 && initial.burnTicks == 0)
+            val saved = listOf(initial)[0]
+            check(saved == initial && saved.fuelAmount == 1)
+            val boxed: Any = initial
+            check(boxed is createaddition.boiler.BurnerStatus && boxed.fuelCapacity == initial.fuelCapacity)
             println("burner-acquired")
             readln()
             check(burner.status().fuelAmount == 0)

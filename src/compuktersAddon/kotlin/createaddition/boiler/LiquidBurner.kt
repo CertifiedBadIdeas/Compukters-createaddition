@@ -10,7 +10,7 @@ import compukter.peripheral.Peripheral
 import compukter.peripheral.TypedPeripheralProvider
 
 /** One atomic server-tick observation. Heat: 0=none, 1=smouldering, 2=fading, 3=heated, 4=seething. */
-public data class BurnerStatus(val fuelAmount: Int, val fuelCapacity: Int, val heat: Int, val burnTicks: Int)
+public value class BurnerStatus(val fuelAmount: Int, val fuelCapacity: Int, val heat: Int, val burnTicks: Int)
 
 /** A Crafts & Additions liquid Blaze Burner created by applying a straw. Read-only. */
 public value class LiquidBurner internal constructor(private val handle: Int) : Peripheral {
