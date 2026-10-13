@@ -1,6 +1,6 @@
 # Compukters: Crafts & Additions
 
-Independent NeoForge 1.21.1 integration for **Create: Crafts & Additions 1.7.2**. This build is tracked in the
+Independent NeoForge 1.21.1 integration for **Create: Crafts & Additions 1.7.2**. This build is pinned as the `addons/createaddition` Git submodule in the
 Compukters workspace and depends on the public addon SDK and upstream mods, without importing other Compukters addons.
 Its initial API version is **1.0** and its bounded base-mod compatibility comes from the staged SDK.
 
@@ -42,6 +42,6 @@ cache with the shared reflink helper. `check` validates host behavior, generated
 and GameTest isolation. `runGameTestServer` exercises actual fuel capabilities and Guest execution through the public
 compiler/terminal/peripheral boundaries. This is a local platform check, not a universal release claim.
 
-The [boiler SCADA project](../../examples/boiler-scada/README.md) combines this addon with the separate Create addon and
+The [boiler SCADA project](https://github.com/CertifiedBadIdeas/Compukters/tree/dev/examples/boiler-scada) combines this addon with the separate Create addon and
 uses a Redstone Port to control a kinetic battery and reversible pumps. The all-addon `addons/dev` build composes both
 integrations with Crafts & Additions and Create: Connected for that stand.
