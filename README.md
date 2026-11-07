@@ -45,3 +45,13 @@ compiler/terminal/peripheral boundaries. This is a local platform check, not a u
 The [boiler SCADA project](https://github.com/CertifiedBadIdeas/Compukters/tree/dev/examples/boiler-scada) combines this addon with the separate Create addon and
 uses a Redstone Port to control a kinetic battery and reversible pumps. The all-addon `addons/dev` build composes both
 integrations with Crafts & Additions and Create: Connected for that stand.
+
+## Declarative Guest contracts
+
+Guest API declarations live in `src/compuktersAddon/contracts`. The SDK generates the actual Guest Kotlin under
+`build/generated/sources/compuktersGuest/kotlin` and packages those sources with the executable `.cagb` image.
+Run `generateCompuktersGuestSources` to inspect the result. Check in `src/compuktersAddon/addon.lock` as ABI history;
+only `updateCompuktersAddonAbiLock` changes selectors/tombstones after an intentional contract edit.
+Unit-returning `@GuestCommand` methods get ordinary calls and batch command factories from the same declaration.
+The generated host validates declared parameter constraints and derives command eligibility.
+See the [SDK authoring guide](https://github.com/CertifiedBadIdeas/Compukters/blob/dev/docs/developers/addon-development.md).
