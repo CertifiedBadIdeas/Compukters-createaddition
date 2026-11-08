@@ -7,11 +7,9 @@
 package createaddition.boiler
 
 import ru.lazyhat.compukters.api.contracts.GuestDevice
-import ru.lazyhat.compukters.api.contracts.GuestRead
-import ru.lazyhat.compukters.api.contracts.GuestRecord
+import ru.lazyhat.compukters.api.contracts.GuestCall
 
 /** One atomic server-tick observation. Heat: 0=none, 1=smouldering, 2=fading, 3=heated, 4=seething. */
-@GuestRecord
 value class BurnerStatus(
     val fuelAmount: Int,
     val fuelCapacity: Int,
@@ -23,6 +21,6 @@ value class BurnerStatus(
 @GuestDevice("createaddition:liquid_burner", bindings = "LiquidBurnerBindings")
 interface LiquidBurner {
     /** Recoverable liquid is separate from fuel already converted into burning time. */
-    @GuestRead(binding = "status")
+    @GuestCall(binding = "status")
     fun status(): BurnerStatus
 }
