@@ -12,7 +12,7 @@ import ru.lazyhat.compukters.api.contracts.GuestRecord
 
 /** One atomic server-tick observation. Heat: 0=none, 1=smouldering, 2=fading, 3=heated, 4=seething. */
 @GuestRecord
-data class BurnerStatus(
+value class BurnerStatus(
     val fuelAmount: Int,
     val fuelCapacity: Int,
     val heat: Int,
